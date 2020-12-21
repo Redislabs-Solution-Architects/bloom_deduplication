@@ -10,7 +10,6 @@ services:
     image: "redislabs/redisinsight:1.8.1"
     depends_on:
       - redis
-      - webapp
       - stream-current
     ports:
       - "8001:8001"
@@ -19,14 +18,14 @@ services:
     links:
       - "redis:redis"
     environment:
-        - REDIS_SERVER=redis
+        - REDIS_HOST=redis
         - REDIS_PORT=6379
-  webapp:
-    image: "maguec/bloom-dedup:latest"
-    links:
-      - "redis:redis"
-    ports:
-      - "5000:5000"
-    environment:
-        - REDIS_SERVER=redis
-        - REDIS_PORT=6379
+          #  webapp:
+          #    image: "maguec/bloom-dedup:latest"
+          #    links:
+          #      - "redis:redis"
+          #    ports:
+          #      - "5000:5000"
+          #    environment:
+          #        - REDIS_SERVER=redis
+          #        - REDIS_PORT=6379

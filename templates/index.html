@@ -1,5 +1,5 @@
 {% extends "bootstrap/base.html" %}
-{% block title %}Set Intent to Buy{% endblock %}
+{% block title %}Kickoff Streaming data{% endblock %}
 
 {% block navbar %}
 {{ nav.top.render() }}
@@ -30,8 +30,8 @@
       <input id="range" class="form-control" name="range" value="1000">
     </div>
     <div class="form-group">
-      <label for="sleep">Time to sleep (ms):</label>
-      <input id="sleep" class="form-control" name="sleep" value="250">
+      <label for="sleepms">Time to sleep (ms):</label>
+      <input id="sleepms" class="form-control" name="sleepms" value="250">
     </div>
     <div class="form-group">
       <p><input type = "submit" value = "Start Streaming" /></p>
