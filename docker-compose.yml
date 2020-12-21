@@ -1,0 +1,32 @@
+version: '3'
+
+
+services:
+  redis:
+    image: "redislabs/redismod:latest"
+    ports:
+      - "6379:6379"
+  insight:
+    image: "redislabs/redisinsight:1.8.1"
+    depends_on:
+      - redis
+      - webapp
+      - stream-current
+    ports:
+      - "8001:8001"
+  stream-current:
+    image: "maguec/stream-current:latest"
+    links:
+      - "redis:redis"
+    environment:
+        - REDIS_SERVER=redis
+        - REDIS_PORT=6379
+  webapp:
+    image: "maguec/bloom-dedup:latest"
+    links:
+      - "redis:redis"
+    ports:
+      - "5000:5000"
+    environment:
+        - REDIS_SERVER=redis
+        - REDIS_PORT=6379
