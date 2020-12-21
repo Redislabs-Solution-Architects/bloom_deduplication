@@ -78,8 +78,15 @@ def firemessage():
 @app.route('/graphs')
 def graphs():
    ts = rts.mrange(0, -1, bucket_size_msec=1000, filters=['Type=Final'])
-   print(ts)
-   return redirect("/", code=302)
+   labels = []
+   filtered = []
+   unfiltered = []
+   for x in ts[0]['filtered'][-1]:
+      labels.append(time.strftime('%H:%M:%S', time.localtime(x[0])))
+      filtered.append(x[1])
+   for x in ts[1]['unfiltered'][-1]:
+      unfiltered.append(x[1])
+   return render_template('stats.html', filtered=filtered, unfiltered=unfiltered,labels=labels)
 
 
 
