@@ -59,6 +59,7 @@ nav = Nav()
 topbar = Navbar('',
     View('Home', 'index'),
     View('Graphs', 'graphs'),
+    View('ReloadDB', 'reloaddb'),
 )
 nav.register_element('top', topbar)
 
@@ -77,7 +78,7 @@ def firemessage():
 
 @app.route('/graphs')
 def graphs():
-   ts = rts.mrange(0, -1, bucket_size_msec=1000, filters=['Type=Final'])
+   ts = rts.mrange(0, -1, bucket_size_msec=10000, filters=['Type=Final'])
    labels = []
    filtered = []
    unfiltered = []
@@ -88,6 +89,17 @@ def graphs():
       unfiltered.append(x[1])
    return render_template('stats.html', filtered=filtered, unfiltered=unfiltered,labels=labels)
 
+
+
+@app.route('/reloaddb')
+def reloaddb():
+   return render_template('flush.html')
+
+@app.route('/flushdb', methods = ['POST'])
+def flushdb():
+   rdb.flushdb()
+   load_data()
+   return redirect("/", code=302)
 
 
 
