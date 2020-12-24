@@ -45,10 +45,10 @@ def load_data():
 
   rts.create('s-unfiltered', retention_ms=60000)
   rts.create('s-filtered', retention_ms=60000)
-  rts.create('unfiltered', labels={'Type':'Final'})
-  rts.create('filtered', labels={'Type':'Final'})
-  rts.createrule('s-unfiltered', 'unfiltered', 'sum', 1000)
-  rts.createrule('s-filtered', 'filtered', 'sum', 1000)
+  rts.create('unfiltered', labels={'Type':'Final'}, retention_ms=86400000)
+  rts.create('filtered', labels={'Type':'Final'}, retention_ms=86400000)
+  rts.createrule('s-unfiltered', 'unfiltered', 'last', 1000)
+  rts.createrule('s-filtered', 'filtered', 'last', 1000)
   
   
   for gear in ['./dedup.py']:

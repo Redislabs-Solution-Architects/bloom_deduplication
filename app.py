@@ -82,11 +82,16 @@ def graphs():
    labels = []
    filtered = []
    unfiltered = []
-   for x in ts[0]['filtered'][-1]:
-      labels.append(time.strftime('%H:%M:%S', time.localtime(x[0])))
-      filtered.append(x[1])
+   # be sure to get all of the unfiltered first otherwise the series gets truncated
    for x in ts[1]['unfiltered'][-1]:
+      labels.append(time.strftime('%H:%M:%S', time.localtime(x[0])))
       unfiltered.append(x[1])
+   for x in ts[0]['filtered'][-1]:
+      filtered.append(x[1])
+      last_tick = x[1]
+   # we need to backfill the filtered timeseries to match the length of the unfiltered
+   for x in range(len(filtered), len(unfiltered)):
+      filtered.append(last_tick)
    return render_template('stats.html', filtered=filtered, unfiltered=unfiltered,labels=labels)
 
 
