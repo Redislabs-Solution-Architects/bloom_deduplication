@@ -5,6 +5,8 @@ from redistimeseries.client import Client as RedisTimeseries
 
 import csv
 import redis
+import fileinput
+
 from os import environ
 
 def load_data():
@@ -56,6 +58,9 @@ def load_data():
       g = file.read()
       rdb.execute_command('RG.PYEXECUTE', g)
       file.close()
+
+  for line in fileinput.input("2019_Collins_Scrabble_Words.txt"):
+     rb.bfAdd("Scrabble-Bloom", line)
 
 if __name__ == "__main__":
     load_data()
