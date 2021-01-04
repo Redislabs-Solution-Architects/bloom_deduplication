@@ -1,7 +1,17 @@
-## DeDuplication with Redis Bloom
-
+# DeDuplication with Redis Bloom
 
 ## Running Locally
+
+Use docker-compose
+
+```
+docker-compose up
+```
+
+[Use the Web UI](http://localhost:5000)
+
+
+## Developing Locally
 
 ### Starup docker container
 
