@@ -59,8 +59,9 @@ def load_data():
       rdb.execute_command('RG.PYEXECUTE', g)
       file.close()
 
-  for line in fileinput.input("2019_Collins_Scrabble_Words.txt"):
-     rb.bfAdd("Scrabble-Bloom", line)
+  if environ.get('REDIS_SCRABBLE') is not None:
+    for line in fileinput.input("2019_Collins_Scrabble_Words.txt"):
+      rb.bfAdd("Scrabble-Bloom", line.rstrip())
 
 if __name__ == "__main__":
     load_data()

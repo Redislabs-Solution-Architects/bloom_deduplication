@@ -73,6 +73,7 @@ def index():
 @app.route('/firemessage', methods = ['POST'])
 def firemessage():
    f = request.form.to_dict()
+   f['range'] = str(int(int(f['messages']) * int(f['range'])/100))
    rdb.xadd('fill', f)
    return redirect("/graphs", code=302)
 
@@ -82,6 +83,7 @@ def graphs():
    labels = []
    filtered = []
    unfiltered = []
+   last_tick = 0
    # be sure to get all of the unfiltered first otherwise the series gets truncated
    for x in ts[1]['unfiltered'][-1]:
       labels.append(time.strftime('%H:%M:%S', time.localtime(x[0])))
