@@ -1,4 +1,4 @@
-# DeDuplication with Redis Bloom
+## DeDuplication with Redis Bloom
 
 ## Running Locally
 
@@ -9,6 +9,8 @@ docker-compose up
 ```
 
 [Use the Web UI](http://localhost:5000)
+
+[Redis Insight](http://localhost:8001)
 
 
 ## Developing Locally
@@ -38,3 +40,6 @@ python3 app.py
 1) [Webapp](http://localhost:5000)
 
 2) Data will automatically load  if it is not already present
+
+### Flow Diagram
+![Diagram](docs/demo-diagram.png)
