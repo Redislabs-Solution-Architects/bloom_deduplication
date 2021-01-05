@@ -13,6 +13,20 @@ docker-compose up
 [Redis Insight](http://localhost:8001)
 
 
+## Using the Demo
+
+[Navigate to the job submission page](http://localhost:5000)
+
+![Diagram](docs/webform.png)
+
+- Set the number of messages to stream
+- Set the percentage of duplicate messages
+- Set the time to sleep between messages (stay over 5 ms)
+
+The job will be submitted and the Graphs view will update every 10 seconds to show the Filtered (Deduplicated) message count and the Unfiltered(total) message count
+
+![Diagram](docs/webgraph.png)
+
 ## Developing Locally
 
 ### Starup docker container
@@ -20,6 +34,7 @@ docker-compose up
 ```
 docker run --rm -p 6379:6379 redislabs/redismod:latest
 ```
+
 
 ### Install python requirements
 
