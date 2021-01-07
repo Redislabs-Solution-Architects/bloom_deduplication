@@ -18,7 +18,11 @@ import re
 import string
 import time
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='/docs', 
+            static_folder='docs',
+)
+
 bootstrap = Bootstrap()
 
 if environ.get('REDIS_SERVER') is not None:
@@ -60,6 +64,7 @@ topbar = Navbar('',
     View('Home', 'index'),
     View('Graphs', 'graphs'),
     View('ReloadDB', 'reloaddb'),
+    View('Presentation', 'preso'),
 )
 nav.register_element('top', topbar)
 
@@ -108,6 +113,10 @@ def flushdb():
    load_data()
    return redirect("/", code=302)
 
+
+@app.route('/preso')
+def preso():
+   return redirect("/docs/index.html", code=302)
 
 
 
