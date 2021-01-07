@@ -223,6 +223,25 @@ slideNumber: false
 
 ---
 
+## When to Use
+
+<small>
+
+- Cuckoo Filter
+    - Need to delete data from the filter
+    - Faster Checks
+    - CF.ADDNX is slower
+- Bloom Filter
+    - Insert is cheaper and faster
+    - Smaller size
+    - Insert/Check single operation
+    - No deletions necessary
+
+</small>
+    
+
+---
+
 # Demo
 
 ---
@@ -240,6 +259,28 @@ slideNumber: false
 ---
 
 <img src="./demo-3.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+### The Gear
+
+<pre><code>
+def runIt(x):
+    val = x['value']['Value']
+    name = x['value']['Name']
+    execute('TS.INCRBY', 's-unfiltered', 1, 'TIMESTAMP', '*')
+    j = execute("BF.ADD", "DEDUP", val)
+    if j > 0:
+        execute('TS.INCRBY', 's-filtered', 1, 'TIMESTAMP', '*')
+
+gb =  GearsBuilder(
+        reader = 'StreamReader',
+        desc   = "Process messages")
+
+gb.map(runIt)
+gb.register('MessageQueue')
+
+</code></pre>
 
 ---
 
