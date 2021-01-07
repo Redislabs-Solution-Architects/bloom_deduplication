@@ -159,9 +159,67 @@ slideNumber: false
 
 ## Bloom Filter
 
+<img src="./bloom-1.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Bloom Filter
+
+<img src="./bloom-2.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Bloom Filter
+
+<img src="./bloom-3.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Bloom Filter
+
+<img src="./bloom-4.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Bloom Filter
+
+<img src="./bloom-5.png" style="background:none; border:none; box-shadow:none;">
+
 ---
 
 ## Cuckoo Filter
+
+<img src="./cuckoo-1.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Cuckoo Filter
+
+<img src="./cuckoo-2.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Cuckoo Filter
+
+<img src="./cuckoo-3.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Cuckoo Filter
+
+<img src="./cuckoo-4.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Cuckoo Filter
+
+<img src="./cuckoo-5.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Cuckoo Filter
+
+<img src="./cuckoo-6.png" style="background:none; border:none; box-shadow:none;">
 
 ---
 
@@ -190,3 +248,7 @@ slideNumber: false
 ---
 
 <img src="./demo-diagram.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+# Thanks
