@@ -27,6 +27,12 @@ The job will be submitted and the Graphs view will update every 10 seconds to sh
 
 ![Diagram](docs/webgraph.png)
 
+## Presentation 
+
+The embedded presentation includes information based around deduplication use cases, how Bloom and Cuckoo filters work as well as more information about this demo.
+
+[Embedded Preso](http://localhost:5000/preso)
+
 ## Developing Locally
 
 ### Starup docker container
