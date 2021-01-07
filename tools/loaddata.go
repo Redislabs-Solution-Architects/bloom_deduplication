@@ -16,16 +16,12 @@ func main() {
 		Addr: "localhost:6379",
 	})
 	start := time.Now()
-	for w := 0; w <= 1000000; w++ {
-		client.Exists("MY-BLOOM", "0123456789-099999")
+	for w := 0; w < 1000000; w++ {
+		item := fmt.Sprintf("0123456789-%06d", w)
+		client.Add("MY-BLOOM", item)
+		rdb.SAdd(ctx, "MY-SET", item)
 	}
 	elapsed := time.Since(start)
-	fmt.Println("BF took:", elapsed)
-	start = time.Now()
-	for w := 0; w <= 1000000; w++ {
-		rdb.SIsMember(ctx, "MY-SET", "0123456789-099999")
-	}
-	elapsed = time.Since(start)
-	fmt.Println("Set took:", elapsed)
+	fmt.Println("Load took:", elapsed)
 
 }
