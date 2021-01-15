@@ -66,7 +66,7 @@ slideNumber: false
 <br>
 <small>
 
-- Asyncronous processing of logs or events
+- asynchronous processing of logs or events
 - Each duplicate costs more in processing and storage
 - Usually large fitlers over time buckets
 
@@ -137,7 +137,7 @@ slideNumber: false
 
 ## Bloom Filters
 
-- Probablistic data structure
+- Probabilistic data structure
 - Trade accuracy for speed/efficiency
 - Answer of "no" is 100% accurate
 - Answer of "yes" has an error associated with it
@@ -146,7 +146,7 @@ slideNumber: false
 
 ## Cuckoo Filters
 
-- Probablistic data structure
+- Probabilistic data structure
 - Trade accuracy for speed/efficiency
 - Answer of "no" is 100% accurate
 - Answer of "yes" has an error associated with it
