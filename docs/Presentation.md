@@ -68,7 +68,7 @@ slideNumber: false
 
 - asynchronous processing of logs or events
 - Each duplicate costs more in processing and storage
-- Usually large fitlers over time buckets
+- Usually large filters over time buckets
 
 </small>
 
@@ -238,7 +238,30 @@ slideNumber: false
     - No deletions necessary
 
 </small>
-    
+
+---
+
+### Things Learned the Hard Way
+
+<small>
+
+- Size appropriately or pay the performance penalty
+- Think carefully about how accurate you need to be
+- Some client libraries are not what you would expect
+- Be *absolutely positive* that all trade offs are communicated
+
+</small>
+
+---
+
+### Other Capabilities
+
+- Top-K
+    - probabilistic leaderboard
+    - May over count due to hash collisions
+- Count-Min-Sketch
+    - Frequency of events in a stream
+    - May over count due to hash collisions
 
 ---
 
