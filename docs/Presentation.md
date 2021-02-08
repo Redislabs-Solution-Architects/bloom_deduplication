@@ -33,6 +33,7 @@ slideNumber: false
 - Update Limiting
 - ETL Processing
 - Ad Serving
+- First Pass Filter
 
 ---
 
@@ -84,6 +85,22 @@ slideNumber: false
 - [AdGears Demo](https://github.com/Redislabs-Solution-Architects/AdGears)
 
 </small>
+
+---
+
+### First Pass Filter
+<br>
+<small>
+
+- Used in fraud detection
+- Filter out transactions <b>before</b> expensive AI calculations
+- Bucket purchases by amounts for vendor AMAZON_100-199.99
+
+</small>
+
+<br>
+
+<img src="./fraud.png" style="background:none; border:none; box-shadow:none;">
 
 ---
 
