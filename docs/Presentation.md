@@ -174,6 +174,37 @@ slideNumber: false
 
 ---
 
+### Hash Function
+#### Building block of Probabalistic Data
+
+<small>
+
+- One way trap door
+- Very fast
+- Convert "Update to version 2.1.12 please" to "375"
+
+</small>
+
+---
+
+### Hash Function
+
+<img src="./hash-1.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+### Hash Function
+
+<img src="./hash-2.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
+### Hash Function
+
+<img src="./hash-3.png" style="background:none; border:none; box-shadow:none;">
+
+---
+
 ## Bloom Filter
 
 <img src="./bloom-1.png" style="background:none; border:none; box-shadow:none;">
