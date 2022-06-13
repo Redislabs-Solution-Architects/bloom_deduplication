@@ -27,7 +27,7 @@ The job will be submitted and the Graphs view will update every 10 seconds to sh
 
 ![Diagram](docs/webgraph.png)
 
-## Presentation 
+## Presentation
 
 The embedded presentation includes information based around deduplication use cases, how Bloom and Cuckoo filters work as well as more information about this demo.
 
@@ -38,7 +38,7 @@ The embedded presentation includes information based around deduplication use ca
 ### Starup docker container
 
 ```
-docker run --rm -p 6379:6379 redislabs/redismod:latest
+docker run --rm -p 6379:6379 redis/redis-stack-server:latest
 ```
 
 
@@ -53,7 +53,7 @@ pip3 install -r requirements.txt
 ### Start the flask app
 
 ```
-python3 app.py 
+python3 app.py
 ```
 
 ### Navigate to the home page
