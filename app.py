@@ -84,7 +84,7 @@ def firemessage():
 
 @app.route('/graphs')
 def graphs():
-   ts = rts.mrange(0, -1, bucket_size_msec=10000, filters=['Type=Final'])
+   ts = rts.mrange(0, int(time.time())*1000, bucket_size_msec=10000, filters=['Type=Final'])
    labels = []
    filtered = []
    unfiltered = []
